@@ -207,7 +207,7 @@ const TransactionForm: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[#f8fafc] p-0 overflow-x-hidden">
-            <div className="max-w-3xl mx-auto p-1.5 sm:p-4 lg:p-6">
+            <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
                 {/* Premium Header */}
                 <header className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-5 sm:mb-8 animate-in fade-in slide-in-from-top-4 duration-500">
                     <button
@@ -217,15 +217,15 @@ const TransactionForm: React.FC = () => {
                         <ArrowLeft size={18} />
                     </button>
                     <div>
-                        <div className="flex flex-wrap items-center gap-2 mb-0.5 sm:mb-1">
-                            <span className={`p-1 sm:p-1.5 rounded-lg text-white ${isOut ? 'bg-blue-600' : 'bg-emerald-600'}`}>
-                                <Activity size={18} />
+                        <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                            <span className={`p-1 rounded-lg text-white ${isOut ? 'bg-blue-600' : 'bg-emerald-600'}`}>
+                                <Activity size={16} />
                             </span>
-                            <h1 className="text-lg sm:text-2xl md:text-3xl font-[950] text-slate-900 tracking-tight">
+                            <h1 className="text-base sm:text-lg md:text-xl font-[950] text-slate-900 tracking-tight">
                                 {isEdit ? `แก้ไขรายการ ${docNo}` : (isRewash ? 'ส่งซักซ้ำ (Rewash)' : (isOut ? 'ส่งซักภายนอก' : 'ส่งซักภายใน'))}
                             </h1>
                         </div>
-                        <p className="text-stone-800 text-xs sm:text-base font-bold tracking-tight">
+                        <p className="text-stone-800 text-[10px] sm:text-xs font-bold tracking-tight">
                             {isEdit ? 'แก้ไขข้อมูลใบนำส่งที่ระบุ' : (isOut ? 'บันทึกรายการผ้าส่งซักกับบริษัทคู่สัญญา' : 'บันทึกรายการผ้าส่งซักจากหน่วยงานภายใน')}
                         </p>
                     </div>
@@ -233,27 +233,27 @@ const TransactionForm: React.FC = () => {
 
                 <form onSubmit={handleSubmit} className="relative space-y-6 md:space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
                     {/* Sticky Summary Dashboard */}
-                    <div className="sticky top-0 sm:top-2 z-[40] bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] flex flex-wrap items-center justify-between gap-1 sm:gap-4 px-2 sm:px-6 md:px-8">
-                        <div className="flex flex-wrap items-center gap-2 sm:gap-5">
+                    <div className="sticky top-0 z-[40] bg-white/95 backdrop-blur-md rounded-xl p-2 sm:p-3 border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] flex flex-wrap items-center justify-between gap-1 px-3 sm:px-6">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                             <div className="flex flex-col">
-                                <span className="text-[7px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest leading-tight">ประเภท</span>
-                                <span className={`font-black text-[10px] sm:text-sm ${isRewash ? 'text-amber-600' : (headerIsOut ? 'text-blue-600' : 'text-emerald-600')}`}>
+                                <span className="text-[7px] sm:text-[8px] font-black text-slate-500 uppercase tracking-widest leading-tight">ประเภท</span>
+                                <span className={`font-black text-[9px] sm:text-xs ${isRewash ? 'text-amber-600' : (headerIsOut ? 'text-blue-600' : 'text-emerald-600')}`}>
                                     {isRewash ? 'ซักซ้ำ' : (headerIsOut ? 'ส่งภายนอก' : 'ส่งภายใน')}
                                 </span>
                             </div>
-                            <div className="hidden sm:block w-px h-6 bg-slate-100"></div>
+                            <div className="hidden sm:block w-px h-5 bg-slate-100"></div>
                             <div className="flex flex-col">
-                                <span className="text-[7px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest leading-tight">รายการ</span>
-                                <span className="font-black text-slate-700 text-[10px] sm:text-sm">{totalItems} ชนิด</span>
+                                <span className="text-[7px] sm:text-[8px] font-black text-slate-500 uppercase tracking-widest leading-tight">รายการ</span>
+                                <span className="font-black text-slate-700 text-[9px] sm:text-xs">{totalItems} ชนิด</span>
                             </div>
-                            <div className="hidden sm:block w-px h-6 bg-slate-100"></div>
+                            <div className="hidden sm:block w-px h-5 bg-slate-100"></div>
                             <div className="flex flex-col">
-                                <span className="text-[7px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest leading-tight">รวมจำนวน</span>
-                                <span className="font-black text-indigo-600 text-xs sm:text-lg">{totalQty} ชิ้น</span>
+                                <span className="text-[7px] sm:text-[8px] font-black text-slate-500 uppercase tracking-widest leading-tight">รวมจำนวน</span>
+                                <span className="font-black text-indigo-600 text-[10px] sm:text-base">{totalQty} ชิ้น</span>
                             </div>
                         </div>
-                        <div className="flex items-center gap-1 sm:gap-2">
-                            <div className={`px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg font-black text-[8px] sm:text-xs ${shift === 'MORNING' ? 'bg-blue-50 text-blue-600' : 'bg-orange-50 text-orange-600'}`}>
+                        <div className="flex items-center gap-1">
+                            <div className={`px-1.5 py-0.5 rounded-lg font-black text-[8px] sm:text-[10px] ${shift === 'MORNING' ? 'bg-blue-50 text-blue-600' : 'bg-orange-50 text-orange-600'}`}>
                                 {shift === 'MORNING' ? 'AM' : 'PM'}
                             </div>
                         </div>
@@ -314,7 +314,7 @@ const TransactionForm: React.FC = () => {
                                     <select
                                         value={headerIsOut ? companyId : departmentId}
                                         onChange={e => headerIsOut ? setCompanyId(e.target.value) : setDepartmentId(e.target.value)}
-                                        className="w-full bg-slate-50 border-2 border-transparent focus:border-indigo-500 focus:bg-white rounded-2xl p-4 outline-none transition-all duration-300 font-black text-slate-700 text-lg shadow-inner appearance-none cursor-pointer"
+                                        className="w-full bg-slate-50 border-2 border-transparent focus:border-indigo-500 focus:bg-white rounded-xl p-3 outline-none transition-all duration-300 font-black text-slate-700 text-base shadow-inner appearance-none cursor-pointer"
                                         required
                                     >
                                         <option value="">-- {headerIsOut ? 'เลือกบริษัท' : 'เลือกแผนก'} --</option>
@@ -465,9 +465,9 @@ const TransactionForm: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={addItemRow}
-                                className="w-full lg:w-auto bg-slate-900 text-white px-6 py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-slate-800 active:scale-95 transition-all shadow-md font-black text-sm"
+                                className="w-full sm:w-auto bg-slate-900 text-white px-5 py-2 rounded-xl flex items-center justify-center gap-2 hover:bg-slate-800 active:scale-95 transition-all shadow-md font-black text-xs"
                             >
-                                <Plus size={16} /> Add Item
+                                <Plus size={14} /> เพิ่มรายการ (Add Item)
                             </button>
                         </div>
 
