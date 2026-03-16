@@ -207,7 +207,7 @@ const TransactionForm: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[#f8fafc] p-0 overflow-x-hidden">
-            <div className="max-w-5xl mx-auto p-2 sm:p-4 lg:p-6">
+            <div className="max-w-3xl mx-auto p-1.5 sm:p-4 lg:p-6">
                 {/* Premium Header */}
                 <header className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-5 sm:mb-8 animate-in fade-in slide-in-from-top-4 duration-500">
                     <button
@@ -233,27 +233,27 @@ const TransactionForm: React.FC = () => {
 
                 <form onSubmit={handleSubmit} className="relative space-y-6 md:space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
                     {/* Sticky Summary Dashboard */}
-                    <div className="sticky top-0 sm:top-2 z-[40] bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] flex flex-wrap items-center justify-between gap-2 md:gap-4 px-3 sm:px-6 md:px-8">
-                        <div className="flex flex-wrap items-center gap-3 sm:gap-5">
+                    <div className="sticky top-0 sm:top-2 z-[40] bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-2 sm:p-3 border border-slate-100 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] flex flex-wrap items-center justify-between gap-1 sm:gap-4 px-2 sm:px-6 md:px-8">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-5">
                             <div className="flex flex-col">
-                                <span className="text-[8px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest">ประเภท</span>
-                                <span className={`font-black text-xs sm:text-sm ${isRewash ? 'text-amber-600' : (headerIsOut ? 'text-blue-600' : 'text-emerald-600')}`}>
-                                    {isRewash ? 'ซักซ้ำ (RE)' : (headerIsOut ? 'ส่งภายนอก' : 'ส่งภายใน')}
+                                <span className="text-[7px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest leading-tight">ประเภท</span>
+                                <span className={`font-black text-[10px] sm:text-sm ${isRewash ? 'text-amber-600' : (headerIsOut ? 'text-blue-600' : 'text-emerald-600')}`}>
+                                    {isRewash ? 'ซักซ้ำ' : (headerIsOut ? 'ส่งภายนอก' : 'ส่งภายใน')}
                                 </span>
                             </div>
                             <div className="hidden sm:block w-px h-6 bg-slate-100"></div>
                             <div className="flex flex-col">
-                                <span className="text-[8px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest">รายการ</span>
-                                <span className="font-black text-slate-700 text-xs sm:text-sm">{totalItems} ชนิด</span>
+                                <span className="text-[7px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest leading-tight">รายการ</span>
+                                <span className="font-black text-slate-700 text-[10px] sm:text-sm">{totalItems} ชนิด</span>
                             </div>
                             <div className="hidden sm:block w-px h-6 bg-slate-100"></div>
                             <div className="flex flex-col">
-                                <span className="text-[8px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest">รวมจำนวน</span>
-                                <span className="font-black text-indigo-600 text-base sm:text-lg">{totalQty} ชิ้น</span>
+                                <span className="text-[7px] sm:text-[9px] font-black text-slate-500 uppercase tracking-widest leading-tight">รวมจำนวน</span>
+                                <span className="font-black text-indigo-600 text-xs sm:text-lg">{totalQty} ชิ้น</span>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <div className={`px-2 py-1 rounded-lg font-black text-[9px] sm:text-xs ${shift === 'MORNING' ? 'bg-blue-50 text-blue-600' : 'bg-orange-50 text-orange-600'}`}>
+                        <div className="flex items-center gap-1 sm:gap-2">
+                            <div className={`px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg font-black text-[8px] sm:text-xs ${shift === 'MORNING' ? 'bg-blue-50 text-blue-600' : 'bg-orange-50 text-orange-600'}`}>
                                 {shift === 'MORNING' ? 'AM' : 'PM'}
                             </div>
                         </div>
@@ -475,20 +475,20 @@ const TransactionForm: React.FC = () => {
                             <div className="min-w-[580px] lg:min-w-full lg:px-10">
                                 <table className="w-full text-left border-separate border-spacing-y-3">
                                 <thead>
-                                    <tr className="text-[11px] font-[900] text-slate-800     uppercase tracking-[0.2em] italic">
-                                        <th className="px-4 py-4 text-center w-12">ลำดับ</th>
-                                        <th className="px-8 py-4 text-left min-w-[180px] md:min-w-[280px]">รายการผ้า (Linen Items)</th>
-                                        <th className="px-4 py-4 text-center w-28">ประเภท/ไซส์</th>
-                                        <th className="px-4 py-4 text-center w-12 text-red-500">ติดเชื้อ</th>
-                                        <th className="px-6 py-4 text-center w-24">จำนวน</th>
+                                    <tr className="text-[10px] font-black text-slate-800 uppercase tracking-wider italic">
+                                        <th className="px-2 py-3 text-center w-8">#</th>
+                                        <th className="px-4 py-3 text-left min-w-[150px] md:min-w-[240px]">รายการผ้า</th>
+                                        <th className="px-2 py-3 text-center w-20">ประเภท/ไซส์</th>
+                                        <th className="px-2 py-3 text-center w-10 text-red-500">ติดเชื้อ</th>
+                                        <th className="px-3 py-3 text-center w-16">จำนวน</th>
                                         {isEdit && (
                                             <>
-                                                <th className="px-6 py-4 text-center w-20 text-emerald-500">รับคืน</th>
-                                                <th className="px-6 py-4 text-center w-20 text-rose-500">ค้างจ่าย</th>
-                                                <th className="px-6 py-4 text-left text-slate-800   ">หมายเหตุ</th>
+                                                <th className="px-3 py-3 text-center w-16 text-emerald-500">รับคืน</th>
+                                                <th className="px-3 py-3 text-center w-16 text-rose-500">ค้างจ่าย</th>
+                                                <th className="px-3 py-3 text-left text-slate-800">หมายเหตุ</th>
                                             </>
                                         )}
-                                        <th className="px-4 py-4 w-24"></th>
+                                        <th className="px-2 py-3 w-16"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -535,16 +535,16 @@ const TransactionForm: React.FC = () => {
 
                                             {/* Infected Column */}
                                             <td className="bg-white p-3 text-center border-y-2 border-transparent group-hover:border-slate-100 transition-all duration-300">
-                                                <button
+                                                    <button
                                                     type="button"
                                                     onClick={() => updateItem(idx, 'isInfected', !item.isInfected)}
-                                                    className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${item.isInfected
-                                                        ? 'bg-red-600 text-white shadow-lg shadow-red-200 ring-4 ring-red-50'
-                                                        : 'bg-slate-50 text-slate-200 hover:text-slate-800   hover:bg-slate-100'
+                                                    className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${item.isInfected
+                                                        ? 'bg-red-600 text-white shadow-lg shadow-red-100'
+                                                        : 'bg-slate-50 text-slate-300 hover:text-slate-800 hover:bg-slate-100'
                                                         }`}
-                                                    title="ติดเชื้อ (Infected)"
+                                                    title="ติดเชื้อ"
                                                 >
-                                                    <Activity size={18} />
+                                                    <Activity size={14} />
                                                 </button>
                                             </td>
 
@@ -585,7 +585,7 @@ const TransactionForm: React.FC = () => {
                                                             type="text"
                                                             value={item.remark || ''}
                                                             onChange={e => updateItem(idx, 'remark', e.target.value)}
-                                                            className="w-full bg-slate-50/50 border-2 border-transparent focus:border-indigo-500 focus:bg-white rounded-xl p-2 text-sm font-medium outline-none transition-all"
+                                                            className="w-full bg-slate-50/50 border-2 border-transparent focus:border-indigo-500 focus:bg-white rounded-lg p-1.5 text-[10px] font-medium outline-none transition-all"
                                                             placeholder="ระบุหมายเหตุ..."
                                                         />
                                                     </td>
